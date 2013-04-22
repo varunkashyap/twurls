@@ -1,0 +1,16 @@
+<ol class='twit-urls'>
+	<li class="twit-url" data-ng-repeat = "url in twitUrls">
+		<div class='twit-url-text'>{{ url.text }} 
+			<a href='{{ url.expanded_url }}' data-ng-click=removeEntry($index)> {{ url.expanded_url }} </a> 
+		</div>
+		<span>MN: {{ url.magic_number | number:0 }}</span>
+		<span>RT: {{ url.retweet_count | number }}</span>
+		<span>FV: {{ url.favorite_count | number }}</span>
+		<span>F: {{ url.followers_count | number }}</span>
+	</li>
+</ol>
+<div id="footer">
+	<button data-ng-click="loadPrevPage()" class="btn btn-primary">Prev</button>
+	<button data-ng-click="loadNextPage()" class="btn btn-primary">Next</button>
+	<span>Displaying {{ start }} - {{ start + limit }} of {{ total }}</span>
+</div>
