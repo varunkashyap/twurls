@@ -5,6 +5,15 @@ var urlsApp = angular.module('urlsApp', [], function($routeProvider, $locationPr
 	});
 });
 
+urlsApp.filter("hostname", function(){
+	return function(input){
+		var temp = document.createElement("a");
+		temp.href = input;
+
+		return temp.hostname;
+	};
+});
+
 
 function UrlsController($scope, $http){
 

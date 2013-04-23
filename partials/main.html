@@ -1,7 +1,7 @@
 <ol class='twit-urls'>
 	<li class="twit-url" data-ng-repeat = "url in twitUrls">
 		<div class='twit-url-text'>{{ url.text }} 
-			<a href='{{ url.expanded_url }}' data-ng-click=removeEntry($index)> {{ url.expanded_url }} </a> 
+			<span class='twit-url-domain'><a href='{{ url.expanded_url }}' data-ng-click=removeEntry($index)> ({{ url.expanded_url | hostname}}) </a></span> 
 		</div>
 		<span>MN: {{ url.magic_number | number:0 }}</span>
 		<span>RT: {{ url.retweet_count | number }}</span>
